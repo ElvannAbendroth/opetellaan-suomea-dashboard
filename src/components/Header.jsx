@@ -18,7 +18,7 @@ class Header extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
-      title: "Dashboard"
+      title: this.props.title
     };
   }
   toggle() {
@@ -30,7 +30,7 @@ class Header extends React.Component {
     return (
       <div>
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">OS Dashboard</NavbarBrand>
+          <NavbarBrand href="/">{this.props.title}</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
